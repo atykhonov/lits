@@ -7,7 +7,7 @@
                 <properties>
                         <property name="kundera.nodes" value="localhost" />
                         <property name="kundera.port" value="60000" />
-                        <property name="kundera.keyspace" value="tkhno" />
+                        <property name="kundera.keyspace" value="default" />
                         <property name="kundera.dialect" value="hbase" />                     
                         <property name="kundera.ddl.auto.prepare" value="update" />
                         <property name="kundera.client.lookup.class"

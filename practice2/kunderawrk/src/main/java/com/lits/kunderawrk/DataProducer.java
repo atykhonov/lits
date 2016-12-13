@@ -21,6 +21,12 @@ public class DataProducer {
 		specializations.add("therapist");
 		specializations.add("dentist");
 		specializations.add("ophthalmologist");
+		
+		List<String> mrTypes = new ArrayList<String>();
+		mrTypes.add("visit");
+		mrTypes.add("exam");
+		mrTypes.add("prescription");
+		mrTypes.add("other");
 
         Map<String, String> props = new HashMap<>();
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hbase_pu", props);
@@ -28,7 +34,7 @@ public class DataProducer {
 
     	DataFactory df = new DataFactory();
 
-    	for (int ph = 0; ph < 1000; ph++) {
+    	for (int ph = 0; ph < 10; ph++) {
     		Physician physician = new Physician();
     		String phFirstName = df.getFirstName();
     		String phLastName = df.getLastName();
@@ -37,25 +43,29 @@ public class DataProducer {
     		physician.setFullName(phFullName);
     		physician.setClinicName(df.getRandomWord());
     		physician.setSpecialization(df.getItem(specializations));
-    		for (int p = 0; p < 1000; p++) {
+    		for (int p = 0; p < 100; p++) {
     			Patient patient = new Patient();
     			String pFirstName = df.getFirstName();
     			String pLastName = df.getLastName();
-    		    // patient.setId();
+    			String pFullName = pFirstName.concat(" ").concat(pLastName);
+    			patient.setId(pFullName.getBytes());
     			patient.setId(ArrayUtils.addAll(physician.getId(), patient.getId()));
-    			patient.setFirstName(df.getFirstName());
-    			patient.setLastName(df.getLastName());
+    			patient.setFirstName(pFirstName);
+    			patient.setLastName(pLastName);
     			patient.setDateOfBirth(df.getBirthDate());
             	for (int mr = 0; mr < 1000; mr++) {
-                    // Patient patient = new Patient();
-                    byte[] id = phFullName.getBytes();
-                    patient.setId(id);
-                    patient.setFirstName(phFirstName);
-                    patient.setLastName(phLastName);
-                    patient.setDateOfBirth(df.getBirthDate());
-                    em.persist(patient);
+            		String description = df.getRandomText(100);
+                    MedicalRecord medicalRecord = new MedicalRecord();
+                    byte[] mcId = ArrayUtils.addAll(patient.getId(), description.getBytes());
+                    medicalRecord.setId(mcId);
+                    medicalRecord.setDatePerformed(df.getBirthDate());
+                    medicalRecord.setDescription(df.getRandomText(100));
+                    medicalRecord.setType(df.getItem(mrTypes));
+                    em.persist(medicalRecord);
             	}
+            	em.persist(patient);
     		}
+    		em.persist(physician);
     	}
 
         em.close();
