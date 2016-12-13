@@ -15,9 +15,9 @@ public class KunderaExample
         Patient user = new Patient();
         byte[] id = "patient id".getBytes();
         user.setId(id);
-        user.setFirst_name("John");
-        user.setLast_name("Smith");
-        user.setDate_of_birth(new Date());
+        user.setFirstName("Andrii");
+        user.setLastName("Tykhonov");
+        user.setDateOfBirth(new Date(1983, 6, 22));
 
         //enable CQL3
         Map<String, String> props = new HashMap<>();

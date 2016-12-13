@@ -8,20 +8,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "patient", schema = "default@hbase_pu")
-class Patient {
+@Table(name = "patient", schema = "tkhno@hbase_pu")
+public class Patient {
 
 	@Id
     public byte[] id;
 
 	@Column(name="first_name")
-    public String first_name;
+    public String firstName;
 
 	@Column(name="last_name")
-    public String last_name;
+    public String lastName;
 
 	@Column(name="date_of_birth")
-    public Date date_of_birth;
+    public Date dateOfBirth;
 	
 	public Patient() {
 	}
@@ -34,27 +34,27 @@ class Patient {
 		this.id = id;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public Date getDate_of_birth() {
-		return date_of_birth;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setDate_of_birth(Date date_of_birth) {
-		this.date_of_birth = date_of_birth;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 }

@@ -19,6 +19,12 @@
 	     <artifactId>kundera-hbase-v2</artifactId>
     	 <version>3.6</version>
 	</dependency>
+	<dependency>
+    	<groupId>org.fluttercode.datafactory</groupId>
+    	<artifactId>datafactory</artifactId>
+    	<version>0.8</version>
+    	<type>jar</type>
+	</dependency>
     </dependencies>
 
     <build>

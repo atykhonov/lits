@@ -7,13 +7,15 @@
                 <properties>
                         <property name="kundera.nodes" value="localhost" />
                         <property name="kundera.port" value="60000" />
-                        <property name="kundera.keyspace" value="default" />
+                        <property name="kundera.keyspace" value="tkhno" />
                         <property name="kundera.dialect" value="hbase" />                     
                         <property name="kundera.ddl.auto.prepare" value="update" />
                         <property name="kundera.client.lookup.class"
                                 value="com.impetus.client.hbase.HBaseClientFactory" />
+                        <!-- 
                         <property name="zookeeper.quorum" value="52.87.221.16"/>
                         <property name="zookeeper.port" value="2128"/>
+                         -->
                         <!-- 
                         <property name="kundera.client.property" value="zookeeper.xml" />
                          -->

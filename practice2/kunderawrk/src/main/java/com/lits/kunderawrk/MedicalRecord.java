@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "medical_record", schema = "default@hbase_pu")
+@Table(name = "medical_record", schema = "tkhno@hbase_pu")
 class MedicalRecord {
 	
 	@Id
@@ -22,7 +22,7 @@ class MedicalRecord {
     public String description;
 
 	@Column(name="date_performed")
-    public Date date_performed;
+    public Date datePerformed;
 
 	public MedicalRecord() {
 	}
@@ -51,11 +51,11 @@ class MedicalRecord {
 		this.description = description;
 	}
 
-	public Date getDate_performed() {
-		return date_performed;
+	public Date getDatePerformed() {
+		return datePerformed;
 	}
 
-	public void setDate_performed(Date date_performed) {
-		this.date_performed = date_performed;
+	public void setDatePerformed(Date datePerformed) {
+		this.datePerformed = datePerformed;
 	}   
 }
