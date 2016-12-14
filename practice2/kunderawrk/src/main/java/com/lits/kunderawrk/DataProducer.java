@@ -43,7 +43,7 @@ public class DataProducer {
     		physician.setFullName(phFullName);
     		physician.setClinicName(df.getRandomWord());
     		physician.setSpecialization(df.getItem(specializations));
-    		for (int p = 0; p < 100; p++) {
+    		for (int p = 0; p < 10; p++) {
     			Patient patient = new Patient();
     			String pFirstName = df.getFirstName();
     			String pLastName = df.getLastName();
@@ -53,7 +53,7 @@ public class DataProducer {
     			patient.setFirstName(pFirstName);
     			patient.setLastName(pLastName);
     			patient.setDateOfBirth(df.getBirthDate());
-            	for (int mr = 0; mr < 1000; mr++) {
+            	for (int mr = 0; mr < 100; mr++) {
             		String description = df.getRandomText(100);
                     MedicalRecord medicalRecord = new MedicalRecord();
                     byte[] mcId = ArrayUtils.addAll(patient.getId(), description.getBytes());

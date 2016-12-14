@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "physician", schema = "default@hbase_pu")
+@Table(name = "physicians", schema = "default@hbase_pu")
 public class Physician {
 
 	@Id
