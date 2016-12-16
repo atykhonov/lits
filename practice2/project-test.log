@@ -1,0 +1,208 @@
+[main] DEBUG org.apache.hadoop.security.Groups  -  Creating new Groups object
+[main] DEBUG org.apache.hadoop.util.NativeCodeLoader  - Trying to load the custom-built native-hadoop library...
+[main] DEBUG org.apache.hadoop.util.NativeCodeLoader  - Failed to load native-hadoop with error: java.lang.UnsatisfiedLinkError: no hadoop in java.library.path
+[main] DEBUG org.apache.hadoop.util.NativeCodeLoader  - java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+[main] WARN  org.apache.hadoop.util.NativeCodeLoader  - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[main] DEBUG org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback  - Falling back to shell based
+[main] DEBUG org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback  - Group mapping impl=org.apache.hadoop.security.ShellBasedUnixGroupsMapping
+[main] DEBUG org.apache.hadoop.util.Shell  - Failed to detect a valid hadoop home directory
+java.io.IOException: HADOOP_HOME or hadoop.home.dir are not set.
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:302)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:327)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:78)
+	at org.apache.hadoop.security.Groups.parseStaticMapping(Groups.java:93)
+	at org.apache.hadoop.security.Groups.<init>(Groups.java:77)
+	at org.apache.hadoop.security.Groups.getUserToGroupsMappingService(Groups.java:240)
+	at org.apache.hadoop.security.Groups.getUserToGroupsMappingService(Groups.java:225)
+	at org.apache.hadoop.hbase.security.UserProvider.<clinit>(UserProvider.java:56)
+	at org.apache.hadoop.hbase.client.ConnectionFactory.createConnection(ConnectionFactory.java:214)
+	at org.apache.hadoop.hbase.client.ConnectionFactory.createConnection(ConnectionFactory.java:119)
+	at com.lits.kunderawrk.BaseTest.beforeSuite(BaseTest.java:53)
+	at com.lits.kunderawrk.BaseTest.runSuite(BaseTest.java:74)
+	at com.lits.kunderawrk.ProjectTest.main(ProjectTest.java:91)
+[main] DEBUG org.apache.hadoop.util.Shell  - setsid exited with exit code 0
+[main] DEBUG org.apache.hadoop.security.Groups  - Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+[main] DEBUG org.apache.hadoop.metrics2.lib.MutableMetricsFactory  - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, value=[Rate of successful kerberos logins and latency (milliseconds)], about=, type=DEFAULT, always=false, sampleName=Ops)
+[main] DEBUG org.apache.hadoop.metrics2.lib.MutableMetricsFactory  - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, value=[Rate of failed kerberos logins and latency (milliseconds)], about=, type=DEFAULT, always=false, sampleName=Ops)
+[main] DEBUG org.apache.hadoop.metrics2.lib.MutableMetricsFactory  - field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, value=[GetGroups], about=, type=DEFAULT, always=false, sampleName=Ops)
+[main] DEBUG org.apache.hadoop.metrics2.impl.MetricsSystemImpl  - UgiMetrics, User and group related metrics
+[main] DEBUG org.apache.hadoop.security.authentication.util.KerberosName  - Kerberos krb5 configuration not found, setting default realm to empty
+[main] DEBUG org.apache.hadoop.security.UserGroupInformation  - hadoop login
+[main] DEBUG org.apache.hadoop.security.UserGroupInformation  - hadoop login commit
+[main] DEBUG org.apache.hadoop.security.UserGroupInformation  - using local user:UnixPrincipal: ec2-user
+[main] DEBUG org.apache.hadoop.security.UserGroupInformation  - UGI loginUser:ec2-user (auth:SIMPLE)
+[main] INFO  org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper  - Process identifier=hconnection-0x6c46efab connecting to ZooKeeper ensemble=localhost:2181
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:host.name=master.cloudera
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:java.version=1.7.0_67
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:java.vendor=Oracle Corporation
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:java.home=/usr/java/jdk1.7.0_67-cloudera/jre
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:java.class.path=kunderawrk-1.0-SNAPSHOT-jar-with-dependencies.jar
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:java.io.tmpdir=/tmp
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:java.compiler=<NA>
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:os.name=Linux
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:os.arch=amd64
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:os.version=3.10.0-327.el7.x86_64
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:user.name=ec2-user
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:user.home=/home/ec2-user
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Client environment:user.dir=/home/ec2-user/atykhonov
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Initiating client connection, connectString=localhost:2181 sessionTimeout=180000 watcher=hconnection-0x6c46efab0x0, quorum=localhost:2181, baseZNode=/hbase
+[main] DEBUG org.apache.zookeeper.ClientCnxn  - zookeeper.disableAutoWatchReset is false
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Socket connection established to localhost/127.0.0.1:2181, initiating session
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Session establishment request sent on localhost/127.0.0.1:2181
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x159091293fc028a, negotiated timeout = 60000
+[main-EventThread] DEBUG org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher  - hconnection-0x6c46efab0x0, quorum=localhost:2181, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028a, packet:: clientPath:null serverPath:null finished:false header:: 1,3  replyHeader:: 1,117748,0  request:: '/hbase/hbaseid,F  response:: s{17,115423,1478049701179,1481915536303,19,0,0,0,67,0,17} 
+[main-EventThread] DEBUG org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher  - hconnection-0x6c46efab-0x159091293fc028a connected
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028a, packet:: clientPath:null serverPath:null finished:false header:: 2,4  replyHeader:: 2,117748,0  request:: '/hbase/hbaseid,F  response:: #ffffffff000146d61737465723a36303030307e2e1effffffbc5f34ffffff86ffffffc650425546a2466626234333438312d323866662d343036662d383439372d356537643033313662343862,s{17,115423,1478049701179,1481915536303,19,0,0,0,67,0,17} 
+[main] DEBUG org.apache.hadoop.hbase.ipc.AbstractRpcClient  - Codec=org.apache.hadoop.hbase.codec.KeyValueCodec@6dba61f0, compressor=null, tcpKeepAlive=true, tcpNoDelay=true, connectTO=10000, readTO=20000, writeTO=60000, minIdleTimeBeforeClose=120000, maxRetries=0, fallbackAllowed=false, bind address=null
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028a, packet:: clientPath:null serverPath:null finished:false header:: 3,4  replyHeader:: 3,117749,0  request:: '/hbase/meta-region-server,F  response:: #ffffffff0001a726567696f6e7365727665723a3630303230ffffffeaffffffd07776ffffff825affffffe27a50425546a1caf6d61737465722e636c6f756465726110fffffff4ffffffd4318ffffffc8ffffffceffffffaeffffffc8ffffff902b100183,s{115458,115458,1481915550478,1481915550478,0,0,0,0,69,0,115458} 
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028a, packet:: clientPath:null serverPath:null finished:false header:: 4,8  replyHeader:: 4,117749,0  request:: '/hbase,F  response:: v{'meta-region-server,'backup-masters,'region-in-transition,'draining,'table,'running,'table-lock,'master,'namespace,'hbaseid,'online-snapshot,'replication,'splitWAL,'recovering-regions,'rs,'flush-table-proc} 
+[hconnection-0x6c46efab-metaLookup-shared--pool2-t1] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Use SIMPLE authentication for service ClientService, sasl=false
+[hconnection-0x6c46efab-metaLookup-shared--pool2-t1] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Connecting to master.cloudera/172.30.169.152:60020
+[main] INFO  com.impetus.kundera.persistence.EntityManagerFactoryImpl  - Loading Core
+[main] INFO  com.impetus.kundera.loader.CoreLoader  - Loading Kundera Core Metdata ... 
+[main] INFO  com.impetus.kundera.persistence.EntityManagerFactoryImpl  - Loading Persistence Unit MetaData For Persistence Unit(s) hbase_pu.
+[main] INFO  com.impetus.kundera.configure.PersistenceUnitConfiguration  - Loading Metadata from persistence.xml ...
+[main] INFO  com.impetus.kundera.configure.PersistenceUnitConfiguration  - Finishing persistence unit metadata configuration ...
+[main] DEBUG com.impetus.kundera.configure.MetamodelConfiguration  - Loading Entity Metadata...
+[main] INFO  com.impetus.kundera.configure.MetamodelConfiguration  - No class to scan for persistence unit hbase_pu. Entities will be loaded from classpath/ context-path
+[main] DEBUG com.impetus.kundera.validation.rules.EntityAnnotationRule  - Validating com.lits.kunderawrk.Physician
+[main] DEBUG com.impetus.kundera.configure.MetamodelConfiguration  - Metadata not found in cache for com.lits.kunderawrk.Physician
+[main] DEBUG com.impetus.kundera.metadata.MetadataBuilder  - Processing @Entity >> class com.lits.kunderawrk.Physician
+[main] DEBUG com.impetus.kundera.metadata.processor.TableProcessor  - Processing @Entity(com.lits.kunderawrk.Physician) for Persistence Object.
+[main] DEBUG com.impetus.kundera.metadata.processor.IndexProcessor  - @Entity com.lits.kunderawrk.Physician will not be indexed for all columns
+[main] DEBUG com.impetus.kundera.validation.rules.EntityAnnotationRule  - Validating com.lits.kunderawrk.MedicalRecord
+[main] DEBUG com.impetus.kundera.configure.MetamodelConfiguration  - Metadata not found in cache for com.lits.kunderawrk.MedicalRecord
+[main] DEBUG com.impetus.kundera.metadata.MetadataBuilder  - Processing @Entity >> class com.lits.kunderawrk.MedicalRecord
+[main] DEBUG com.impetus.kundera.metadata.processor.TableProcessor  - Processing @Entity(com.lits.kunderawrk.MedicalRecord) for Persistence Object.
+[main] DEBUG com.impetus.kundera.metadata.processor.IndexProcessor  - @Entity com.lits.kunderawrk.MedicalRecord will not be indexed for all columns
+[main] DEBUG com.impetus.kundera.validation.rules.EntityAnnotationRule  - Validating com.lits.kunderawrk.Patient
+[main] DEBUG com.impetus.kundera.configure.MetamodelConfiguration  - Metadata not found in cache for com.lits.kunderawrk.Patient
+[main] DEBUG com.impetus.kundera.metadata.MetadataBuilder  - Processing @Entity >> class com.lits.kunderawrk.Patient
+[main] DEBUG com.impetus.kundera.metadata.processor.TableProcessor  - Processing @Entity(com.lits.kunderawrk.Patient) for Persistence Object.
+[main] DEBUG com.impetus.kundera.metadata.processor.IndexProcessor  - @Entity com.lits.kunderawrk.Patient will not be indexed for all columns
+[main] INFO  com.impetus.kundera.configure.ClientMetadataBuilder  - Loading client factory for persistence unit hbase_pu
+[main] INFO  com.impetus.kundera.client.ClientResolver  - Initializing client factory for: hbase_pu
+[main] INFO  com.impetus.kundera.client.ClientResolver  - Finishing factory initialization
+[main] INFO  com.impetus.kundera.configure.SchemaConfiguration  - Configuring schema export for : hbase_pu
+[main] WARN  com.impetus.kundera.configure.AbstractPropertyReader  - File config.xml not found, Caused by 
+[main] INFO  org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper  - Process identifier=hconnection-0x211f617f connecting to ZooKeeper ensemble=localhost:2181
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Initiating client connection, connectString=localhost:2181 sessionTimeout=90000 watcher=hconnection-0x211f617f0x0, quorum=localhost:2181, baseZNode=/hbase
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(localhost:2181)] WARN  org.apache.zookeeper.ClientCnxn  - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxnSocketNIO  - Ignoring exception during shutdown input
+java.nio.channels.ClosedChannelException
+	at sun.nio.ch.SocketChannelImpl.shutdownInput(SocketChannelImpl.java:802)
+	at sun.nio.ch.SocketAdaptor.shutdownInput(SocketAdaptor.java:426)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:200)
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110)
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxnSocketNIO  - Ignoring exception during shutdown output
+java.nio.channels.ClosedChannelException
+	at sun.nio.ch.SocketChannelImpl.shutdownOutput(SocketChannelImpl.java:819)
+	at sun.nio.ch.SocketAdaptor.shutdownOutput(SocketAdaptor.java:434)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.cleanup(ClientCnxnSocketNIO.java:207)
+	at org.apache.zookeeper.ClientCnxn$SendThread.cleanup(ClientCnxn.java:1185)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1110)
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Socket connection established to localhost/127.0.0.1:2181, initiating session
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Session establishment request sent on localhost/127.0.0.1:2181
+[main] DEBUG org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper  - Possibly transient ZooKeeper, quorum=localhost:2181, exception=org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss for /hbase/hbaseid
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x159091293fc028b, negotiated timeout = 60000
+[main-EventThread] DEBUG org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher  - hconnection-0x211f617f0x0, quorum=localhost:2181, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+[main-EventThread] DEBUG org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher  - hconnection-0x211f617f-0x159091293fc028b connected
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028b, packet:: clientPath:null serverPath:null finished:false header:: 1,3  replyHeader:: 1,117750,0  request:: '/hbase/hbaseid,F  response:: s{17,115423,1478049701179,1481915536303,19,0,0,0,67,0,17} 
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028b, packet:: clientPath:null serverPath:null finished:false header:: 2,4  replyHeader:: 2,117750,0  request:: '/hbase/hbaseid,F  response:: #ffffffff000146d61737465723a36303030307e2e1effffffbc5f34ffffff86ffffffc650425546a2466626234333438312d323866662d343036662d383439372d356537643033313662343862,s{17,115423,1478049701179,1481915536303,19,0,0,0,67,0,17} 
+[main] DEBUG org.apache.hadoop.hbase.ipc.AbstractRpcClient  - Codec=org.apache.hadoop.hbase.codec.KeyValueCodec@5755f64e, compressor=null, tcpKeepAlive=true, tcpNoDelay=true, connectTO=10000, readTO=20000, writeTO=60000, minIdleTimeBeforeClose=120000, maxRetries=0, fallbackAllowed=false, bind address=null
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028b, packet:: clientPath:null serverPath:null finished:false header:: 3,3  replyHeader:: 3,117750,0  request:: '/hbase,F  response:: s{2,2,1478049693536,1478049693536,0,112,0,0,0,16,115458} 
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028b, packet:: clientPath:null serverPath:null finished:false header:: 4,4  replyHeader:: 4,117750,0  request:: '/hbase/master,F  response:: #ffffffff000146d61737465723a3630303030ffffffbb4a2fffffff8e4a50464550425546a1caf6d61737465722e636c6f756465726110ffffffe0ffffffd4318ffffffd6ffffffe4ffffffaeffffffc8ffffff902b10018ffffffeaffffffd43,s{115350,115350,1481915492951,1481915492951,0,0,0,97118811629420550,65,0,115350} 
+[main] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Use SIMPLE authentication for service MasterService, sasl=false
+[main] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Connecting to master.cloudera/172.30.169.152:60000
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028b, packet:: clientPath:null serverPath:null finished:false header:: 5,4  replyHeader:: 5,117750,0  request:: '/hbase/meta-region-server,F  response:: #ffffffff0001a726567696f6e7365727665723a3630303230ffffffeaffffffd07776ffffff825affffffe27a50425546a1caf6d61737465722e636c6f756465726110fffffff4ffffffd4318ffffffc8ffffffceffffffaeffffffc8ffffff902b100183,s{115458,115458,1481915550478,1481915550478,0,0,0,0,69,0,115458} 
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028b, packet:: clientPath:null serverPath:null finished:false header:: 6,8  replyHeader:: 6,117750,0  request:: '/hbase,F  response:: v{'meta-region-server,'backup-masters,'region-in-transition,'draining,'table,'running,'table-lock,'master,'namespace,'hbaseid,'online-snapshot,'replication,'splitWAL,'recovering-regions,'rs,'flush-table-proc} 
+[hconnection-0x211f617f-shared--pool3-t1] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Use SIMPLE authentication for service ClientService, sasl=false
+[hconnection-0x211f617f-shared--pool3-t1] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Connecting to master.cloudera/172.30.169.152:60020
+[main] INFO  com.impetus.kundera.loader.GenericClientFactory  - Loading client metadata for persistence unit : hbase_pu
+[main] INFO  com.impetus.kundera.loader.GenericClientFactory  - Initializing client for persistence unit : hbase_pu
+[main] INFO  com.impetus.kundera.loader.GenericClientFactory  - Constructing pool for persistence unit : hbase_pu
+[main] INFO  org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper  - Process identifier=hconnection-0x20498030 connecting to ZooKeeper ensemble=localhost:2181
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Initiating client connection, connectString=localhost:2181 sessionTimeout=90000 watcher=hconnection-0x204980300x0, quorum=localhost:2181, baseZNode=/hbase
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Socket connection established to localhost/127.0.0.1:2181, initiating session
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Session establishment request sent on localhost/127.0.0.1:2181
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x159091293fc028c, negotiated timeout = 60000
+[main-EventThread] DEBUG org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher  - hconnection-0x204980300x0, quorum=localhost:2181, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028c, packet:: clientPath:null serverPath:null finished:false header:: 1,3  replyHeader:: 1,117775,0  request:: '/hbase/hbaseid,F  response:: s{17,115423,1478049701179,1481915536303,19,0,0,0,67,0,17} 
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028c, packet:: clientPath:null serverPath:null finished:false header:: 2,4  replyHeader:: 2,117775,0  request:: '/hbase/hbaseid,F  response:: #ffffffff000146d61737465723a36303030307e2e1effffffbc5f34ffffff86ffffffc650425546a2466626234333438312d323866662d343036662d383439372d356537643033313662343862,s{17,115423,1478049701179,1481915536303,19,0,0,0,67,0,17} 
+[main] DEBUG org.apache.hadoop.hbase.ipc.AbstractRpcClient  - Codec=org.apache.hadoop.hbase.codec.KeyValueCodec@5f79d27c, compressor=null, tcpKeepAlive=true, tcpNoDelay=true, connectTO=10000, readTO=20000, writeTO=60000, minIdleTimeBeforeClose=120000, maxRetries=0, fallbackAllowed=false, bind address=null
+[main] INFO  com.impetus.kundera.persistence.EntityManagerFactoryImpl  - EntityManagerFactory created for persistence unit : hbase_pu
+[main-EventThread] DEBUG org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher  - hconnection-0x20498030-0x159091293fc028c connected
+[main] DEBUG com.impetus.kundera.persistence.EntityManagerImpl  - Creating EntityManager for persistence unit : hbase_pu
+[main] INFO  com.impetus.kundera.persistence.EntityManagerImpl  - Returning client instance for persistence unit hbase_pu.
+[main] DEBUG com.impetus.kundera.loader.GenericClientFactory  - Returning fresh client instance for persistence unit : hbase_pu
+[main] DEBUG com.impetus.kundera.persistence.EntityManagerImpl  - Created EntityManager for persistence unit : hbase_pu
+[main] INFO  com.impetus.kundera.query.QueryImpl  - On getResultList() executing query: select p from Physician p
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028c, packet:: clientPath:null serverPath:null finished:false header:: 3,4  replyHeader:: 3,117775,0  request:: '/hbase/meta-region-server,F  response:: #ffffffff0001a726567696f6e7365727665723a3630303230ffffffeaffffffd07776ffffff825affffffe27a50425546a1caf6d61737465722e636c6f756465726110fffffff4ffffffd4318ffffffc8ffffffceffffffaeffffffc8ffffff902b100183,s{115458,115458,1481915550478,1481915550478,0,0,0,0,69,0,115458} 
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028c, packet:: clientPath:null serverPath:null finished:false header:: 4,8  replyHeader:: 4,117775,0  request:: '/hbase,F  response:: v{'meta-region-server,'backup-masters,'region-in-transition,'draining,'table,'running,'table-lock,'master,'namespace,'hbaseid,'online-snapshot,'replication,'splitWAL,'recovering-regions,'rs,'flush-table-proc} 
+[hconnection-0x20498030-metaLookup-shared--pool8-t1] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Use SIMPLE authentication for service ClientService, sasl=false
+[hconnection-0x20498030-metaLookup-shared--pool8-t1] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Connecting to master.cloudera/172.30.169.152:60020
+[main] INFO  com.impetus.kundera.query.QueryImpl  - On getResultList() executing query: select p from Patient p where p.firstName = "Madison"
+[main] INFO  com.impetus.kundera.query.QueryImpl  - On getResultList() executing query: select mr from MedicalRecord mr where mr.type = "type"
+[main] DEBUG com.impetus.kundera.persistence.PersistenceDelegator  - Flushing following flush stack to database(s) (showing stack objects from top to bottom):
+[]
+[main] INFO  org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation  - Closing zookeeper sessionid=0x159091293fc028c
+[main] DEBUG org.apache.zookeeper.ZooKeeper  - Closing session: 0x159091293fc028c
+[main] DEBUG org.apache.zookeeper.ClientCnxn  - Closing client for session: 0x159091293fc028c
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028c, packet:: clientPath:null serverPath:null finished:false header:: 5,-11  replyHeader:: 5,117776,0  request:: null response:: null
+[main] DEBUG org.apache.zookeeper.ClientCnxn  - Disconnecting client for session: 0x159091293fc028c
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Session: 0x159091293fc028c closed
+[main] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Stopping rpc client
+[main-EventThread] INFO  org.apache.zookeeper.ClientCnxn  - EventThread shut down
+[main] INFO  org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper  - Process identifier=hconnection-0x32323b40 connecting to ZooKeeper ensemble=localhost:2181
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Initiating client connection, connectString=localhost:2181 sessionTimeout=180000 watcher=hconnection-0x32323b400x0, quorum=localhost:2181, baseZNode=/hbase
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Socket connection established to localhost/127.0.0.1:2181, initiating session
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Session establishment request sent on localhost/127.0.0.1:2181
+[main-SendThread(localhost:2181)] INFO  org.apache.zookeeper.ClientCnxn  - Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x159091293fc028d, negotiated timeout = 60000
+[main-EventThread] DEBUG org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher  - hconnection-0x32323b400x0, quorum=localhost:2181, baseZNode=/hbase Received ZooKeeper Event, type=None, state=SyncConnected, path=null
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028d, packet:: clientPath:null serverPath:null finished:false header:: 1,3  replyHeader:: 1,117777,0  request:: '/hbase/hbaseid,F  response:: s{17,115423,1478049701179,1481915536303,19,0,0,0,67,0,17} 
+[main-EventThread] DEBUG org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher  - hconnection-0x32323b40-0x159091293fc028d connected
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028d, packet:: clientPath:null serverPath:null finished:false header:: 2,4  replyHeader:: 2,117777,0  request:: '/hbase/hbaseid,F  response:: #ffffffff000146d61737465723a36303030307e2e1effffffbc5f34ffffff86ffffffc650425546a2466626234333438312d323866662d343036662d383439372d356537643033313662343862,s{17,115423,1478049701179,1481915536303,19,0,0,0,67,0,17} 
+[main] DEBUG org.apache.hadoop.hbase.ipc.AbstractRpcClient  - Codec=org.apache.hadoop.hbase.codec.KeyValueCodec@49c450f6, compressor=null, tcpKeepAlive=true, tcpNoDelay=true, connectTO=10000, readTO=20000, writeTO=60000, minIdleTimeBeforeClose=120000, maxRetries=0, fallbackAllowed=false, bind address=null
+======= Starting... =======
+Preparing full scan
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028d, packet:: clientPath:null serverPath:null finished:false header:: 3,4  replyHeader:: 3,117777,0  request:: '/hbase/meta-region-server,F  response:: #ffffffff0001a726567696f6e7365727665723a3630303230ffffffeaffffffd07776ffffff825affffffe27a50425546a1caf6d61737465722e636c6f756465726110fffffff4ffffffd4318ffffffc8ffffffceffffffaeffffffc8ffffff902b100183,s{115458,115458,1481915550478,1481915550478,0,0,0,0,69,0,115458} 
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028d, packet:: clientPath:null serverPath:null finished:false header:: 4,8  replyHeader:: 4,117777,0  request:: '/hbase,F  response:: v{'meta-region-server,'backup-masters,'region-in-transition,'draining,'table,'running,'table-lock,'master,'namespace,'hbaseid,'online-snapshot,'replication,'splitWAL,'recovering-regions,'rs,'flush-table-proc} 
+[hconnection-0x32323b40-metaLookup-shared--pool10-t1] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Use SIMPLE authentication for service ClientService, sasl=false
+[hconnection-0x32323b40-metaLookup-shared--pool10-t1] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Connecting to master.cloudera/172.30.169.152:60020
+Record found
+It took 27 ms to find the record
+Preparing prefix scan
+Record found
+It took 20 ms to find the record
+======= Finishing... =======
+[main] INFO  org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation  - Closing zookeeper sessionid=0x159091293fc028d
+[main] DEBUG org.apache.zookeeper.ZooKeeper  - Closing session: 0x159091293fc028d
+[main] DEBUG org.apache.zookeeper.ClientCnxn  - Closing client for session: 0x159091293fc028d
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028d, packet:: clientPath:null serverPath:null finished:false header:: 5,-11  replyHeader:: 5,117778,0  request:: null response:: null
+[main] DEBUG org.apache.zookeeper.ClientCnxn  - Disconnecting client for session: 0x159091293fc028d
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Session: 0x159091293fc028d closed
+[main] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Stopping rpc client
+[main-EventThread] INFO  org.apache.zookeeper.ClientCnxn  - EventThread shut down
+SUCCESS : All tests passed.
+[main] INFO  org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation  - Closing zookeeper sessionid=0x159091293fc028a
+[main] DEBUG org.apache.zookeeper.ZooKeeper  - Closing session: 0x159091293fc028a
+[main] DEBUG org.apache.zookeeper.ClientCnxn  - Closing client for session: 0x159091293fc028a
+[main-SendThread(localhost:2181)] DEBUG org.apache.zookeeper.ClientCnxn  - Reading reply sessionid:0x159091293fc028a, packet:: clientPath:null serverPath:null finished:false header:: 5,-11  replyHeader:: 5,117779,0  request:: null response:: null
+[main] DEBUG org.apache.zookeeper.ClientCnxn  - Disconnecting client for session: 0x159091293fc028a
+[main] INFO  org.apache.zookeeper.ZooKeeper  - Session: 0x159091293fc028a closed
+[main] DEBUG org.apache.hadoop.hbase.ipc.RpcClientImpl  - Stopping rpc client
+[main-EventThread] INFO  org.apache.zookeeper.ClientCnxn  - EventThread shut down
