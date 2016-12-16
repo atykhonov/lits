@@ -12,6 +12,7 @@
                         <property name="kundera.ddl.auto.prepare" value="update" />
                         <property name="kundera.client.lookup.class"
                                 value="com.impetus.client.hbase.HBaseClientFactory" />
+                                <property name="kundera.client.property" value="config.xml" />
                         <!-- 
                         <property name="zookeeper.quorum" value="52.87.221.16"/>
                         <property name="zookeeper.port" value="2128"/>

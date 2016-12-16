@@ -19,10 +19,7 @@ public class KunderaExample
         user.setLastName("Tykhonov");
         user.setDateOfBirth(new Date(1983, 6, 22));
 
-        //enable CQL3
-        Map<String, String> props = new HashMap<>();
-        // props.put(CassandraConstants.CQL_VERSION, CassandraConstants.CQL_VERSION_3_0);
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("hbase_pu", props);
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("hbase_pu");
         EntityManager em = emf.createEntityManager();
 
         em.persist(user);
